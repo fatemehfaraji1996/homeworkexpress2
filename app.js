@@ -11,22 +11,19 @@ app.get('/compose',(req,res)=>{
     res.sendFile(path.join(__dirname, '/compose.html'));
 })
 
-app.get('/home',(req,res)=>{
+app.post('/home',(req,res)=>{
     res.sendFile(path.join(__dirname, '/index.html'));
+    console.log( req.body);
+    // res.send(req.body)
 })
 
 
 const PORT = 4000
 app.listen(PORT,()=>{
-    console.log('runing yor port');
+    console.log('runing your port');
 
 })
 
-// const form = document.querySelector('.form')
-// console.log(form);
-// form.addEventListener('submit',(event)=>{
-//     event.preventDefault()
-//     const inputEle = document.querySelector('.form-control')
+
 
     
-// })
