@@ -14,7 +14,7 @@ formEle.addEventListener('submit',(event)=>{
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    'lll':'mkm'
+    myvalue
   })
 })
 .then(response => response.json())

@@ -4,17 +4,18 @@ const app = express()
 const path =require('path')
 const {urlincoded}= require('./middleware/md')
 const {json}=require('./middleware/md')
-
+const corse = require('cors')
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
+app.use(corse())
 app.get('/compose',(req,res)=>{
     res.sendFile(path.join(__dirname, '/compose.html'));
 })
 
 app.post('/home',(req,res)=>{
-    res.sendFile(path.join(__dirname, '/index.html'));
-    console.log( req.body);
-    // res.send(req.body)
+    // res.sendFile(path.join(__dirname, '/index.html'));
+    // console.log( req.body);
+    res.send(req.body)
 })
 
 
