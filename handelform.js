@@ -6,15 +6,15 @@ formEle.addEventListener('submit',(event)=>{
     event.preventDefault()
     let inputEle = document.querySelector('.form-control')
     console.log(inputEle.value);
-    let myvalue = inputEle.value
-    console.log(myvalue);
+    let titel = inputEle.value
+    console.log(titel);
     fetch('http://localhost:4000/home', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    myvalue
+    titel
   })
 })
 .then(response => response.json())
