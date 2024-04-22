@@ -1,7 +1,7 @@
 const formEle = document.querySelector('.form')
-console.log(formEle);
+// console.log(formEle);
 const inputEle = document.querySelector('.form-control')
-console.log(inputEle);
+// console.log(inputEle);
 formEle.addEventListener('submit',(event)=>{
     event.preventDefault()
     let inputEle = document.querySelector('.form-control')
