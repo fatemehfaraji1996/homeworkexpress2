@@ -29,7 +29,7 @@ app.get('/home', (req, res) => {
 app.post('/home',(req,res)=>{
     // res.sendFile(path.join(__dirname, '/index.html'));
     // console.log( req.body);
-    res.send(req.body)
+ res.send(req.body)
     const jsonData = JSON . stringify (req.body) 
     const filePath = 'data.json'
     try {
@@ -38,7 +38,6 @@ app.post('/home',(req,res)=>{
       } catch (error) {
         console.error('Error writing JSON data to file:', error);
       }
-
 })
 
 

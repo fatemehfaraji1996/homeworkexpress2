@@ -10,9 +10,23 @@ async function fetchTodos() {
       }
       const todos = await response.json();
       console.log(todos);
+      const divcantaners = document.createElement('div')
+      divCantaner.append(divcantaners)
+      const h1Ele = document.createElement('h1')
+      divcantaners.append(h1Ele)
+      h1Ele.textContent=todos.titel
+      h1Ele.classList.add("h1style")
+      const pEle =document.createElement('p')
+      divcantaners.append(pEle)
+      pEle.textContent=todos.post
+      pEle.classList.add('pstyle')
     } catch (error) {
       console.error("There was a problem with your fetch request: ", error);
     }
   }
   
   fetchTodos();
+
+
+
+
