@@ -5,16 +5,18 @@ console.log(inputEle);
 formEle.addEventListener('submit',(event)=>{
     event.preventDefault()
     let inputEle = document.querySelector('.form-control')
-    console.log(inputEle.value);
+    let inputPost = document.querySelector('.post')
     let titel = inputEle.value
-    console.log(titel);
+    let post = inputPost.value
     fetch('http://localhost:4000/home', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    titel
+    titel,
+    post
+
   })
 })
 .then(response => response.json())
