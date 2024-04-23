@@ -30,8 +30,6 @@ app.get('/home', (req, res) => {
 //     // res.sendFile(path.join(__dirname, '/index.html'));
 //     // console.log( req.body);
 // //  seve data 
-
-
 //     const jsonData = JSON . stringify (req.body) 
 //     const filePath = 'data.json'
 //     try {
@@ -42,22 +40,19 @@ app.get('/home', (req, res) => {
 //       }
 //       res.send(req.body)
 // })
+const PORT = 5000
 app.post('/home', (req, res) => {
     const newData = req.body;
-
     fs.readFile('data.json', 'utf8', (err, data) => {
         if (err) throw err;
-        
         let jsonData = JSON.parse(data);
         jsonData.push(newData);
-        
         fs.writeFile('data.json', JSON.stringify(jsonData), 'utf8', (err) => {
             if (err) throw err;
             res.send('Data added successfully');
         });
     });
 });
-const PORT = 4000
 app.listen(PORT,()=>{
     console.log('runing your port');
 
