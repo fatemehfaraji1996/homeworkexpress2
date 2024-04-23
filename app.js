@@ -39,19 +39,7 @@ app.post('/home',(req,res)=>{
       } catch (error) {
         console.error('Error writing JSON data to file:', error);
       }
-// 
-fs.readFile("data.json", "utf8", function(err, data){
-    if(err) throw err;
-
-    let resultArray = data.json()
-
-    res.send(resultArray);
-});
-
-
 })
-
-
 const PORT = 4000
 app.listen(PORT,()=>{
     console.log('runing your port');

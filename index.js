@@ -9,17 +9,23 @@ async function fetchTodos() {
         throw new Error("Network response was not OK");
       }
       const todos = await response.json();
-      console.log(todos);
-      const divcantaners = document.createElement('div')
+     
+      console.log([todos]);
+      for (let i = 0; i < [todos].length; i++) {
+        const element = [todos][i];
+       
+        const divcantaners = document.createElement('div')
       divCantaner.append(divcantaners)
       const h1Ele = document.createElement('h1')
       divcantaners.append(h1Ele)
-      h1Ele.textContent=todos.titel
+      h1Ele.textContent=element.titel
       h1Ele.classList.add("h1style")
       const pEle =document.createElement('p')
       divcantaners.append(pEle)
-      pEle.textContent=todos.post
+      pEle.textContent=element.post
       pEle.classList.add('pstyle')
+      }
+      
     } catch (error) {
       console.error("There was a problem with your fetch request: ", error);
     }
