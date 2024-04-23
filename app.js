@@ -30,6 +30,7 @@ app.post('/home',(req,res)=>{
     // res.sendFile(path.join(__dirname, '/index.html'));
     // console.log( req.body);
  res.send(req.body)
+//  seve data 
     const jsonData = JSON . stringify (req.body) 
     const filePath = 'data.json'
     try {
@@ -38,6 +39,16 @@ app.post('/home',(req,res)=>{
       } catch (error) {
         console.error('Error writing JSON data to file:', error);
       }
+// 
+fs.readFile("data.json", "utf8", function(err, data){
+    if(err) throw err;
+
+    let resultArray = data.json()
+
+    res.send(resultArray);
+});
+
+
 })
 
 
