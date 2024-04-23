@@ -7,16 +7,14 @@ const inputWeight = document.querySelector('#towH')
  let numberone= inputHight.value
  let numbetTow = inputWeight.value
 
- fetch('https:/bmicalculator', {
+ fetch('http://localhost:8080/bmicalculator', {
     method: 'POST',
     headers: {
         numberone,
         numbetTow 
     },
-    body: JSON.stringify({ "id": 78912 })
+    body:inputHight,inputHight
 })
    .then(response => response.json())
    .then(response => console.log(JSON.stringify(response)))
-
- 
 })
