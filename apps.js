@@ -13,13 +13,25 @@ app.use(cors())
 app.get("/",  (req, res) => {
     res.sendFile(__dirname + "/index.html")
 });
-// 
+//1 
 
  app.post('/',(req,res)=>{
-    console.log(req.body);
-    
+    const { num1, num2 } = req.body;
+    const sum = parseInt(num1) + parseInt(num2);
+    res.send(`The sum of ${num1} and ${num2} is: ${sum}`);
  })
-// 
+// 2
 
+
+app.get('/bmi-calculator', (req, res) => {
+    res.sendFile(__dirname + '/bmi.html');
+});
+// 3
+app.post('/bmicalculator', (req, res) => {
+    const { weight, height } = req.body;
+    const bmi = weight / (height * height);
+
+    res.send(`Your BMI is: ${bmi}`);
+});
 app.listen(port);
 console.log('Server started at http://localhost:' + port);
