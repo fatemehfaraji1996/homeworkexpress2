@@ -26,20 +26,37 @@ app.get('/home', (req, res) => {
     });
 });
 
-app.post('/home',(req,res)=>{
-    // res.sendFile(path.join(__dirname, '/index.html'));
-    // console.log( req.body);
- res.send(req.body)
-//  seve data 
-    const jsonData = JSON . stringify (req.body) 
-    const filePath = 'data.json'
-    try {
-        fs.writeFileSync(filePath, jsonData);
-        console.log('JSON data saved to file successfully.');
-      } catch (error) {
-        console.error('Error writing JSON data to file:', error);
-      }
-})
+// app.post('/home',(req,res)=>{
+//     // res.sendFile(path.join(__dirname, '/index.html'));
+//     // console.log( req.body);
+// //  seve data 
+
+
+//     const jsonData = JSON . stringify (req.body) 
+//     const filePath = 'data.json'
+//     try {
+//         fs.writeFileSync(filePath, jsonData);
+//         console.log('JSON data saved to file successfully.');
+//       } catch (error) {
+//         console.error('Error writing JSON data to file:', error);
+//       }
+//       res.send(req.body)
+// })
+app.post('/home', (req, res) => {
+    const newData = req.body;
+
+    fs.readFile('data.json', 'utf8', (err, data) => {
+        if (err) throw err;
+        
+        let jsonData = JSON.parse(data);
+        jsonData.push(newData);
+        
+        fs.writeFile('data.json', JSON.stringify(jsonData), 'utf8', (err) => {
+            if (err) throw err;
+            res.send('Data added successfully');
+        });
+    });
+});
 const PORT = 4000
 app.listen(PORT,()=>{
     console.log('runing your port');
