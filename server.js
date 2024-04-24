@@ -13,6 +13,13 @@ app.use(cors())
 app.get("/",  (req, res) => {
     res.sendFile(__dirname + "/index.html")
 });
+app.post("/",(req,res)=>{
+    const {name,last,pas}=req.body
+    console.log(req.body);
+})
+
+
+
 app.listen(port,()=>{
     console.log("ok");
 })
