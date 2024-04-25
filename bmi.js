@@ -6,11 +6,14 @@ const inputHight = document.querySelector('#oneH')
 const inputWeight = document.querySelector('#towH')
  let weight= inputHight.value
  let height = inputWeight.value
-
- const url = 'http://localhost:8080/bmicalculator'
-
+ if (weight,height) {
+  
+ 
+ const url = 'http://localhost:8000/bmicalculator'
+ 
  formE.addEventListener('submit',(event)=>{
-    event.preventDefault()
+   event.preventDefault()
+   console.log(weight,height);
     fetch(url, {
   method: 'POST',
   headers: {
@@ -21,12 +24,12 @@ const inputWeight = document.querySelector('#towH')
    height
   })
 })
-.then(response => response)
+.then(response => parseInt(response))
 .then(data => console.log(data))
 .catch(error => console.error(error));
 })
 
-
+ }
 
 
 
