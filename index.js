@@ -9,15 +9,14 @@ const inputpas = document.querySelector('#pas')
  let lastname = inputlast.value
  let pas = inputpas.value
 
- fetch('http://localhost:8080/bmicalculator', {
+ fetch('http://localhost:8080/', {
     method: 'POST',
     headers: {
-        name,
-        lastname ,
-        pas
+       
     },
-    body:name,lastname,pas
+
+  
 })
-   .then(response => response.json())
+   .then(response => response.text())
    .then(response => console.log(JSON.stringify(response)))
 })
