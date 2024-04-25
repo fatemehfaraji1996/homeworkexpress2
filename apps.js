@@ -26,11 +26,11 @@ app.get('/bmi-calculator', (req, res) => {
 });
 // 3
 app.post('/bmicalculator', (req, res) => {
-    console.log(req.body);
-    const { weight, height } = req.body;
-    const bmi = weight / (height * height);
+    let numberWeigh = parseInt(req.body.weight)
+    let numberHight = parseInt(req.body.height)
+    // const { weight, height } =req.body
+    const bmi = numberWeigh / (numberHight * numberHight)
     res.send(`BMI is: ${bmi}`);
-    
 });
 app.listen(port);
 console.log('Server started at http://localhost:' + port);
