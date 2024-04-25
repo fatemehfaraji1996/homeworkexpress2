@@ -18,6 +18,7 @@ formE.addEventListener('submit',(e)=>{
    height
   })
 })
+
 .then(response => response.text())
 .then(data =>{
   const formE =document.querySelector('form')
