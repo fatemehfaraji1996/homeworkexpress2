@@ -8,15 +8,15 @@ const port = 8000;
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(cors())
-
-
 app.get("/",  (req, res) => {
     res.sendFile(__dirname + "/index.html")
 });
 //1 
-
  app.post('/',(req,res)=>{
+  
     const { num1, num2 } = req.body;
+    console.log(num1);
+    console.log(num2);
     const sum = parseInt(num1) + parseInt(num2);
     res.send(`The sum of ${num1} and ${num2} is: ${sum}`);
  })
