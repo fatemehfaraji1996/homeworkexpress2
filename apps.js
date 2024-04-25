@@ -26,13 +26,8 @@ app.get('/bmi-calculator', (req, res) => {
 });
 // 3
 app.post('/bmicalculator', (req, res) => {
-    
     const { weight, height } =req.body
-console.log(weight);
-console.log(height);
-
     const bmi = parseInt(weight) / (parseInt(height)*parseInt(height) )
-    console.log(bmi);
     res.send(`BMI is: ${bmi}`);
 });
 app.listen(port);
