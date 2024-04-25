@@ -8,7 +8,7 @@ formEle.addEventListener('submit',(event)=>{
     let inputPost = document.querySelector('.post')
     let titel = inputEle.value
     let post = inputPost.value
-    fetch('http://localhost:4000/home', {
+    fetch('http://localhost:5000/home', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'

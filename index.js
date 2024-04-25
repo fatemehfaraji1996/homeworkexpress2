@@ -4,16 +4,15 @@ const divCantaner = document.querySelector('.cantaner')
 console.log(divCantaner);
 async function fetchTodos() {
     try {
-      const response = await fetch("http://localhost:4000/home");
+      const response = await fetch("http://localhost:5000/home");
       if (!response.ok) {
         throw new Error("Network response was not OK");
       }
       const todos = await response.json();
-     
-      console.log([todos]);
-      for (let i = 0; i < [todos].length; i++) {
-        const element = [todos][i];
-       
+      console.log(todos);
+      console.log(todos);
+      for (let i = 0; i < todos.length; i++) {
+        const element = todos[i];
         const divcantaners = document.createElement('div')
       divCantaner.append(divcantaners)
       const h1Ele = document.createElement('h1')
