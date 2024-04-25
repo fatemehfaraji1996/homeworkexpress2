@@ -8,15 +8,31 @@ const inputpas = document.querySelector('#pas')
  let name= inputname.value
  let lastname = inputlast.value
  let pas = inputpas.value
+ console.log(name,lastname,pas);
+if (name,lastname,pas) {
+    
 
- fetch('http://localhost:8080/', {
-    method: 'POST',
-    headers: {
-       
-    },
+let url = 'http://localhost:8000/'
+    fetch(url, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+ name,lastname,pas
+  })
+})
+.then(response => response.text())
+.then(data =>{
+    console.log(data);
+  const formE =document.querySelector('form')
+  const pEle = document.createElement('p')
+  formE.append(pEle)
+  pEle.textContent = data
+} )
+.catch(error => console.error(error));
+}
 
-  
-})
-   .then(response => response.text())
-   .then(response => console.log(JSON.stringify(response)))
-})
+}
+)
+
