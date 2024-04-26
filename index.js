@@ -24,7 +24,6 @@ async function fetchTodos() {
       pEle.textContent=element.post
       pEle.classList.add('pstyle')
       }
-      
     } catch (error) {
       console.error("There was a problem with your fetch request: ", error);
     }

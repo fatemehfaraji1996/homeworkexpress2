@@ -25,21 +25,6 @@ app.get('/home', (req, res) => {
         res.json(JSON.parse(data));
     });
 });
-
-// app.post('/home',(req,res)=>{
-//     // res.sendFile(path.join(__dirname, '/index.html'));
-//     // console.log( req.body);
-// //  seve data 
-//     const jsonData = JSON . stringify (req.body) 
-//     const filePath = 'data.json'
-//     try {
-//         fs.writeFileSync(filePath, jsonData);
-//         console.log('JSON data saved to file successfully.');
-//       } catch (error) {
-//         console.error('Error writing JSON data to file:', error);
-//       }
-//       res.send(req.body)
-// })
 const PORT = 5000
 app.post('/home', (req, res) => {
     const newData = req.body;
